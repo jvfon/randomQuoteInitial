@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>
+        Click the button to get a funny quote.
+    </p>
+
+    <button onclick="mixArray()">
+        Funny Quote
+    </button>
+
+    <p id="quotes"></p>
+    <p id="authors"></p>
+
+
+    <script>
+        var lotsOfQuotes = [
+            "Do not take life too seriously. You will never get out of it alive.",
+            "To succeed in life, you need three things: a wishbone, a backbone and a funny bone.",
+            "If I had to live my life again, I'd make the same mistakes, only sooner.",
+            "Behind every great man is a woman rolling her eyes.",
+            "Happiness is having a large, loving, caring, close-nit family in another city"
+
+        ];
+
+        var lotsOfAuthors = [
+            "Elbert Hubbard",
+            "Reba McEntire",
+            "Tallulah Bankhead",
+            "Jim Carrey",
+            "George Burns"
+        ];
+
+        document.getElementById("quotes").innerHTML = lotsOfQuotes[0];
+        document.getElementById("quotes").innerHTML = lotsOfAuthors[0];
+
+        function mixArray() {
+            lotsOfQuotes.sort(function(a, b) {
+                return 0.5 - Math.random()
+            });
+            document.getElementById("quotes").innerHTML = lotsOfQuotes[0];
+            
+            lotsOfAuthors.sort(function(a, b) {
+                return 0.5 - Math.random()
+            });
+            document.getElementById("authors").innerHTML = lotsOfAuthors[0];
+        }
+    </script>
+</body>
+
+</html>
